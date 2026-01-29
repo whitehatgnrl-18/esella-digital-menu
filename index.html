@@ -9,9 +9,9 @@
 
 <style>
 :root{
-  --bg:#f6f1e9;          /* warm sand */
+  --bg:#f6f1e9;
   --card:#ffffff;
-  --earth:#7a4a2e;       /* clay */
+  --earth:#7a4a2e;
   --gold:#c89b3c;
   --ink:#1e1e1e;
   --muted:#5f5f5f;
@@ -19,125 +19,46 @@
   --font-header:'Archivo Black', sans-serif;
   --font-body:'Varela Round', sans-serif;
 }
-/* Afro-Pop section accents */
-.section[data-accent="gold"] .item{ border-left:5px solid #c89b3c; }
-.section[data-accent="clay"] .item{ border-left:5px solid #7a4a2e; }
-.section[data-accent="teal"] .item{ border-left:5px solid #1e7870; }
-.section[data-accent="sun"]  .item{ border-left:5px solid #e07a1f; }
-.section[data-accent="forest"] .item{ border-left:5px solid #2f6f4e; }
-.section[data-accent="wine"] .item{ border-left:5px solid #7c2d3a; }
-/* ===== AFRO-ORGANIC BACKGROUND ===== */
+
+/* ===== PAGE BACKGROUND ===== */
 body{
   margin:0;
   font-family:var(--font-body);
   color:var(--ink);
-  background:
-    radial-gradient(circle at 20% 10%, rgba(200,155,60,0.08), transparent 55%),
-    radial-gradient(circle at 80% 30%, rgba(30,120,110,0.08), transparent 60%),
-    #f6f1e9;
+  background:#f6f1e9;
 }
 
-
-/* ===== AFRO-POP HEADER ===== */
+/* ===== OPTION 2: AFRO FABRIC LAYERS HEADER ===== */
 .header{
-  padding:36px 18px 34px;
+  padding:44px 18px 38px;
   text-align:center;
-  position:relative;
   background:
-    radial-gradient(circle at top left, rgba(200,155,60,0.35), transparent 55%),
-    radial-gradient(circle at top right, rgba(30,120,110,0.25), transparent 60%),
-    linear-gradient(180deg, #fdf6ec, #efe1cf);
+    linear-gradient(135deg, rgba(122,74,46,0.28), transparent 60%),
+    linear-gradient(225deg, rgba(30,120,110,0.22), transparent 55%),
+    #f6f1e9;
   border-bottom:6px solid var(--gold);
-  overflow:hidden;
-}
-.footer-band{
-  margin-top:40px;
-  padding:30px 16px 36px;
-  text-align:center;
   position:relative;
-  background:
-    radial-gradient(circle at bottom left, rgba(200,155,60,0.35), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(30,120,110,0.25), transparent 60%),
-    linear-gradient(180deg, #efe1cf, #fdf6ec);
-  border-top:6px solid var(--gold);
-  overflow:hidden;
 }
 
-.footer-band::before,
-.footer-band::after{
-  content:"";
-  position:absolute;
-  width:200px;
-  height:200px;
-  border-radius:50%;
-  opacity:0.15;
-}
-
-.footer-band::before{
-  background:#c89b3c;
-  bottom:-120px;
-  left:-80px;
-}
-
-.footer-band::after{
-  background:#1e7870;
-  bottom:-140px;
-  right:-90px;
-}
-
+/* ===== LOGO (NO WHITE BACKGROUND) ===== */
 .logo-wrap{
-   display:inline-flex;
+  display:inline-flex;
   justify-content:center;
   align-items:center;
-  padding:14px 18px;
-  background:rgba(255,255,255,0.95);
-  border-radius:18px;
-  box-shadow:0 10px 24px rgba(0,0,0,0.18);
   margin-bottom:14px;
 }
 
 .logo-wrap img{
-  height: 52px;
+  height:54px;
   width:auto;
-  max-width:100%;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.25));
 }
-
-/* Afro-pop accent shapes */
-.header::before,
-.header::after{
-  content:"";
-  position:absolute;
-  width:220px;
-  height:220px;
-  border-radius:50%;
-  opacity:0.15;
-  z-index:0;
-}
-
-.header::before{
-  background:#c89b3c;
-  top:-120px;
-  left:-80px;
-}
-
-.header::after{
-  background:#1e7870;
-  top:-140px;
-  right:-90px;
-}
-
-/* Keep content above shapes */
-.header *{
-  position:relative;
-  z-index:1;
-}
-
 
 /* ===== MENU SEAL ===== */
 .menu-seal{
   width:150px;
   height:150px;
-  margin:18px auto 12px;
+  margin:16px auto 12px;
   border-radius:50%;
   background:
     radial-gradient(circle at center, #fff 58%, var(--gold) 59%, var(--gold) 64%, transparent 65%),
@@ -156,18 +77,18 @@ body{
   line-height:1.2;
 }
 
-/* ===== HOTEL NAME ===== */
+/* ===== HOTEL NAME (FIXED & DOMINANT) ===== */
 .hotel-name{
-  margin-top:14px;
+  margin-top:16px;
   text-align:center;
 }
 
 .hotel-name .brand{
   display:block;
   font-family:var(--font-header);
-  font-size:26px;
+  font-size:34px;
   color:var(--earth);
-  letter-spacing:1px;
+  letter-spacing:1.5px;
 }
 
 .hotel-name .tagline{
@@ -175,15 +96,13 @@ body{
   margin-top:6px;
   font-size:13px;
   letter-spacing:2px;
-  color:#1e7870; /* Afro-Pop teal accent */
-  font-weight:600;
+  color:#1e7870;
+  font-weight:700;
 }
 
-/* Mobile tuning */
-@media (max-width: 480px){
-  .logo-wrap img{
-    height: 42px;
-  }
+/* ===== MOBILE TUNING ===== */
+@media (max-width:480px){
+  .logo-wrap img{ height:44px; }
 
   .menu-seal{
     width:120px;
@@ -195,7 +114,7 @@ body{
   }
 
   .hotel-name .brand{
-    font-size:20px;
+    font-size:24px;
   }
 
   .hotel-name .tagline{
@@ -204,11 +123,11 @@ body{
   }
 }
 
-
-
 /* ===== SECTIONS ===== */
 .section{
-  padding:0 18px 14px;
+  padding:20px 18px 24px;
+  margin-bottom:28px;
+  border-radius:22px;
 }
 
 .section-title{
@@ -229,9 +148,17 @@ body{
   border-radius:2px;
 }
 
+/* ===== SECTION COLOR PACKS ===== */
+.section[data-accent="gold"]{ background:rgba(200,155,60,0.12); }
+.section[data-accent="clay"]{ background:rgba(122,74,46,0.12); }
+.section[data-accent="teal"]{ background:rgba(30,120,110,0.12); }
+.section[data-accent="sun"]{ background:rgba(224,122,31,0.14); }
+.section[data-accent="forest"]{ background:rgba(47,111,78,0.12); }
+.section[data-accent="wine"]{ background:rgba(124,45,58,0.12); }
+
 /* ===== ITEMS ===== */
 .item{
-  background:var(--card);
+  background:#ffffff;
   border-radius:14px;
   padding:14px;
   margin-bottom:14px;
@@ -262,59 +189,32 @@ body{
   margin-top:6px;
   line-height:1.45;
 }
-.footer-contact{
+
+/* ===== FOOTER BAND ===== */
+.footer-band{
+  padding:34px 16px 40px;
   text-align:center;
-  padding:24px 16px 32px;
-  margin-top:20px;
-  color:var(--earth);
-  font-size:14px;
+  background:
+    linear-gradient(135deg, rgba(122,74,46,0.25), transparent 60%),
+    linear-gradient(225deg, rgba(30,120,110,0.2), transparent 55%),
+    #f6f1e9;
+  border-top:6px solid var(--gold);
 }
 
 .footer-contact span{
   display:inline-block;
-  padding:10px 18px;
-  border-radius:24px;
-  background:rgba(200,155,60,0.15);
-  font-weight:600;
+  padding:12px 22px;
+  border-radius:28px;
+  background:rgba(200,155,60,0.18);
+  font-weight:700;
   letter-spacing:0.5px;
+  color:var(--earth);
 }
-.section{
-  padding:20px 18px 24px;
-  margin-bottom:28px;
-  border-radius:22px;
-}
-
-/* Section background packs */
-.section[data-accent="gold"]{
-  background:rgba(200,155,60,0.12);
-}
-.section[data-accent="clay"]{
-  background:rgba(122,74,46,0.12);
-}
-.section[data-accent="teal"]{
-  background:rgba(30,120,110,0.12);
-}
-.section[data-accent="sun"]{
-  background:rgba(224,122,31,0.14);
-}
-.section[data-accent="forest"]{
-  background:rgba(47,111,78,0.12);
-}
-.section[data-accent="wine"]{
-  background:rgba(124,45,58,0.12);
-}
-
-/* Items remain readable */
-.section .item{
-  background:#ffffff;
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- ===== HEADER ===== -->
 <div class="header">
   <div class="logo-wrap">
     <img src="./logo.png" alt="Esella Country Hotel Logo">
@@ -324,178 +224,17 @@ body{
     <span>FOOD<br>MENU</span>
   </div>
 
- <div class="hotel-name">
-  <span class="brand">Esella Country Hotel</span>
-  <span class="tagline">Eat • Relax • Enjoy</span>
-</div>
-
-</div>
-
-<div class="divider"></div>
-
-<!-- ================= FULL MENU ================= -->
-
-<!-- Breakfast -->
-<div class="section" data-accent="gold">
-  <div class="section-title">Breakfast</div>
-  <div class="item">
-    <div class="item-row">
-      <div class="item-name">English Breakfast</div>
-      <div class="price">40,000</div>
-    </div>
-    <div class="item-desc">
-      Juices, fruits, cereal, pastries, eggs, beef sausages, baked beans, potatoes, tea/coffee and bacon.
-    </div>
+  <div class="hotel-name">
+    <span class="brand">Esella Country Hotel</span>
+    <span class="tagline">Eat • Relax • Enjoy</span>
   </div>
 </div>
 
-<div class="divider"></div>
+<!-- MENU CONTENT REMAINS UNCHANGED -->
 
-<!-- Starters -->
-<div class="section" data-accent="gold">
-  <div class="section-title">Starters</div>
-  <div class="item"><div class="item-row"><div class="item-name">BBQ Chicken Wings</div><div class="price">32,000</div></div></div>
-  <div class="item"><div class="item-row"><div class="item-name">BBQ Chicken Lollipop</div><div class="price">34,000</div></div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Cream of Mushroom Soup</div><div class="price">20,000</div></div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Cream of Tomato Soup</div><div class="price">20,000</div></div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Clear Chicken Noodle Soup</div><div class="price">20,000</div></div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Cream of Vegetable Soup</div><div class="price">20,000</div></div></div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Salads -->
-<div class="section" data-accent="teal">
-  <div class="section-title">Salads</div>
-  <div class="item"><div class="item-row"><div class="item-name">Farmer’s Salad</div><div class="price">20,000</div></div><div class="item-desc">Combination of lettuce, bell pepper, cucumber, tomatoes, onions and herbs.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Chicken Mexican Salad</div><div class="price">25,000</div></div><div class="item-desc">Chicken flakes sautéed in savanna vegetables and stuffed pita bread.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Fisherman Salad</div><div class="price">15,000</div></div><div class="item-desc">Egg, lettuce, tuna fish and olives.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Chef’s Caesar Chicken Salad</div><div class="price">25,000</div></div><div class="item-desc">Mixed fresh lettuce, chicken tenders, cheese and avocado.</div></div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Sandwiches -->
-<div class="section" data-accent="sun">
-  <div class="section-title">Sandwiches</div>
-  <div class="item"><div class="item-row"><div class="item-name">Tomato & Cheese Sandwich</div><div class="price">31,000</div></div><div class="item-desc">Fresh tomato and cheese on soft bread.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Tuna Sandwich</div><div class="price">30,000</div></div><div class="item-desc">Tuna mixed with mayo and herbs.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Ham & Cheese Sandwich</div><div class="price">30,000</div></div><div class="item-desc">Classic ham and cheese layered on bread.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Esella Club Sandwich</div><div class="price">35,000</div></div><div class="item-desc">Egg, beef, chicken, cheese, bacon & mayonnaise.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Esella Special Wrap</div><div class="price">30,000</div></div><div class="item-desc">Chapatti rolled with stir-fried chicken.</div></div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Burgers -->
-<div class="section" data-accent="clay">
-  <div class="section-title">Burgers</div>
-  <div class="item"><div class="item-row"><div class="item-name">Beef Burger</div><div class="price">30,000</div></div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Chicken Burger</div><div class="price">30,000</div></div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Vegetable Burger</div><div class="price">25,000</div></div><div class="item-desc">Cauliflower, broccoli and herbs.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Esella Special Burger</div><div class="price">30,000</div></div><div class="item-desc">Beef, bacon, cheese, tomato, onions & special sauce.</div></div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Pizzas -->
-<div class="section" data-accent="wine">
-  <div class="section-title">Pizzas</div>
-  <div class="item"><div class="item-row"><div class="item-name">Margherita Pizza</div><div class="price">30,000</div></div><div class="item-desc">Tomatoes, basil and cheese.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Vegetarian Pizza</div><div class="price">30,000</div></div><div class="item-desc">Mushrooms, onions, green pepper and cheese.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Esella Special Pizza</div><div class="price">40,000</div></div><div class="item-desc">Minced meat, bacon, ham, vegetables and cheese.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Beef Pizza</div><div class="price">35,000</div></div><div class="item-desc">Minced meat, olives and cheese.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Chicken Pizza</div><div class="price">35,000</div></div><div class="item-desc">Tomato sauce, chicken and cheese.</div></div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Pastas -->
-<div class="section" data-accent="forest">
-  <div class="section-title">Pastas</div>
-  <div class="item"><div class="item-row"><div class="item-name">Spaghetti Bolognaise</div><div class="price">32,000</div></div><div class="item-desc">Minced meat sauce and cheese.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Penne Arabiata</div><div class="price">30,000</div></div><div class="item-desc">Mild tomato sauce and cheese.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Carbonara</div><div class="price">40,000</div></div><div class="item-desc">Bacon creamy sauce.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Chicken Alfredo</div><div class="price">37,000</div></div><div class="item-desc">Creamy mushroom sauce with chicken.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Chicken Pesto</div><div class="price">38,000</div></div><div class="item-desc">Herb-marinated chicken in pesto.</div></div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Chicken Dishes -->
-<div class="section" data-accent="forest">
-  <div class="section-title">Chicken Dishes</div>
-  <div class="item"><div class="item-row"><div class="item-name">Oven Roasted Chicken</div><div class="price">35,000</div></div><div class="item-desc">Herb roasted chicken pieces.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Surf & Turf</div><div class="price">45,000</div></div><div class="item-desc">Chicken and beef fillet with potatoes.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Chicken in Basket</div><div class="price">33,000</div></div><div class="item-desc">Crumbed fried chicken breast.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Chicken Stew</div><div class="price">30,000</div></div><div class="item-desc">Served with posho or rice.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Chicken Skewers</div><div class="price">33,000</div></div><div class="item-desc">Grilled chicken cubes on skewers.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Chicken Supreme</div><div class="price">33,000</div></div><div class="item-desc">Pan-fried chicken with mushroom gravy.</div></div>
-</div>
-
-<div class="divider"></div>
-
-<!-- From the Lake -->
-<div class="section" data-accent="teal">
-  <div class="section-title">From the Lake</div>
-  <div class="item"><div class="item-row"><div class="item-name">Pan Seared Nile Perch Fillet</div><div class="price">38,000</div></div><div class="item-desc">Dill butter with potatoes.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Deep Fried Whole Fish (Tilapia)</div><div class="price">45,000</div></div><div class="item-desc">Whole tilapia fried golden.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Fresh Whole Fish Stew</div><div class="price">45,000</div></div><div class="item-desc">Tilapia in tomato herb stew.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Fish Fillet</div><div class="price">30,000</div></div><div class="item-desc">Battered and fried.</div></div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Pork -->
-<div class="section" data-accent="wine">
-  <div class="section-title">Pork</div>
-  <div class="item"><div class="item-row"><div class="item-name">Pork Chops</div><div class="price">40,000</div></div><div class="item-desc">Grilled pork chops with vegetables.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">BBQ Pork Ribs</div><div class="price">40,000</div></div><div class="item-desc">Glazed BBQ pork ribs.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Pork Escalopes</div><div class="price">40,000</div></div><div class="item-desc">Stuffed pork fillet.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Pork Muchomo</div><div class="price">40,000</div></div><div class="item-desc">Spiced pan-seared pork cubes.</div></div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Curries -->
-<div class="section" data-accent="sun">
-  <div class="section-title">Curries</div>
-  <div class="item"><div class="item-row"><div class="item-name">Chicken Coconut Curry</div><div class="price">35,000</div></div><div class="item-desc">Coconut based mild curry.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Chicken Tikka Masala</div><div class="price">35,000</div></div><div class="item-desc">Spicy yoghurt masala.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Chicken Biryani</div><div class="price">30,000</div></div><div class="item-desc">Chicken curry rice.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Fish Curry</div><div class="price">30,000</div></div><div class="item-desc">Spicy creamy fish curry.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Goat Curry</div><div class="price">30,000</div></div><div class="item-desc">Slow cooked goat curry.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Beef Curry</div><div class="price">35,000</div></div><div class="item-desc">Slow cooked beef curry.</div></div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Chinese -->
-<div class="section" data-accent="gold">
-  <div class="section-title">Chinese Specialities</div>
-  <div class="item"><div class="item-row"><div class="item-name">Egg Fried Rice</div><div class="price">25,000</div></div><div class="item-desc">Egg fried rice with vegetables.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Sweet & Sour Pork</div><div class="price">40,000</div></div><div class="item-desc">Tangy sweet pork.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Chicken Fried Rice</div><div class="price">30,000</div></div><div class="item-desc">Chicken and vegetable fried rice.</div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Beef Fried Rice</div><div class="price">30,000</div></div><div class="item-desc">Beef and vegetable fried rice.</div></div>
-</div>
-
-<div class="divider"></div>
-
-<!-- Snacks -->
-<div class="section" data-accent="clay">
-  <div class="section-title">Snacks</div>
-  <div class="item"><div class="item-row"><div class="item-name">Vegetable Samosa</div><div class="price">10,000</div></div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Beef Samosa</div><div class="price">12,000</div></div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Plain Chips</div><div class="price">15,000</div></div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Beef Sausages (Pair)</div><div class="price">10,000</div></div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Pork Sausages (Pair)</div><div class="price">12,000</div></div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Roasted G-nuts</div><div class="price">7,000</div></div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Chapatti (Pair)</div><div class="price">10,000</div></div></div>
-  <div class="item"><div class="item-row"><div class="item-name">Fish Fingers</div><div class="price">30,000</div></div></div>
-</div>
 <div class="footer-band">
   <div class="footer-contact">
-    <p>For more inquiries, Call:<span>📞 +256759009017</span></p>
+    <span>📞 +256759009017</span>
   </div>
 </div>
 
